@@ -6,4 +6,4 @@ username=$(cat /root/.bashrc | grep username | sed 's/username=//')
 
 login=$(who | awk '{print $1}' | grep $username | uniq)
 
-if [[ $count == 0 ]] && [[ -z $login ]]; then sudo shutdown now;  fi
+if [[ -z $login ]]; then sudo shutdown now;  fi
